@@ -48,7 +48,7 @@ class MessageQueueBase(object):
         channel.queue_bind(exchange=self.__exchange, queue=result.method.queue, routing_key=self.__routing_key)
 
         channel.basic_qos(prefetch_count=1)
-        channel.basic_consume(on_message_callback=self.call_back, queue=result.method.queue, no_ack=self.__no_ack)
+        channel.basic_consume(on_message_callback=self.call_back, queue=result.method.queue, auto_ack=self.__no_ack)
         ins_log.read_log('info', '[*]Queue %s started.' % (result.method.queue))
 
         channel.start_consuming()
