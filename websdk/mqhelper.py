@@ -44,7 +44,7 @@ class MessageQueueBase(object):
         if self.__queue_name:
             result = channel.queue_declare(queue=self.__queue_name, durable=True)
         else:
-            result = channel.queue_declare(exclusive=True)
+            result = channel.queue_declare('', exclusive=True)
         channel.queue_bind(exchange=self.__exchange, queue=result.method.queue, routing_key=self.__routing_key)
 
         channel.basic_qos(prefetch_count=1)
@@ -87,7 +87,7 @@ class MessageQueueBase(object):
         if self.__queue_name:
             result = self.__channel.queue_declare(queue=self.__queue_name)
         else:
-            result = self.__channel.queue_declare(exclusive=True)
+            result = self.__channel.queue_declare('', exclusive=True)
 
         self.__channel.queue_bind(exchange=self.__exchange, queue=result.method.queue)
 
