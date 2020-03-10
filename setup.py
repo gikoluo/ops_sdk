@@ -16,7 +16,7 @@ setup(
               ,'websdk.apis'],
     url='https://github.com/ss1917/ops_sdk/',
     license='',
-    install_requires=['fire==0.1.3', 'shortuuid', 'pymysql==0.9.3', 'sqlalchemy==1.3.0', 'pika==1.1.0', 'PyJWT',
+    install_requires=['fire==0.1.3', 'shortuuid', 'pymysql==0.9.3', 'sqlalchemy==1.3.13', 'pika==1.1.0', 'PyJWT',
                       'Crypto==1.4.1', 'requests', 'redis==2.10.6', 'tornado>=5.0',
                       'aliyun-python-sdk-core-v3==2.8.6', 'aliyun-python-sdk-dysmsapi', 'python-dateutil==2.7.5',
                       'ldap3==2.6', 'pycryptodome'],
